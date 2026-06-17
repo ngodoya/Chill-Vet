@@ -1,18 +1,18 @@
-class Calendario: 
-    def __init__(self, citas_por_fecha: dict):
-        self.__citas_por_fecha = citas_por_fecha
-    
-    def get_citas_por_fecha(self):
-        return self.__citas_por_fecha
-    def set_citas_por_fecha(self, citas_por_fecha: dict):
-        self.__citas_por_fecha = citas_por_fecha
-    
-    def mostrar_mes(self, mes, año): 
-        print("Mes, año")
-
-    def marcar_disponibilidad(self, fecha, hora): 
-        print("Marcar disponibilidad")
-    
-    def obtener_citas_dia(self, fecha): 
-        print("Obtener citas del día")
-        
+from datetime import date
+class Calendario():
+    def __init__(self):
+        self._citas_por_fecha = {}
+    def mostrar_mes(self, mes:int , año:int):
+        citas_fecha = {}
+        for i, citas in self._citas_por_fecha.items():
+            fecha = date.fromisoformat(i)
+            if fecha.month == mes and fecha.year == año:
+                citas_fecha[i] = citas
+        return citas_fecha
+    def marcar_disponibilidad(self, fecha:str, hora:str):
+        if fecha not in self._citas_por_fecha:
+            self._citas_por_fecha[fecha] = {}
+        else:
+            self._citas_por_fecha[fecha][hora] = "ocupado"
+    def obtener_citas_dia(self, fecha: str):
+        return self._citas_por_fecha.get(fecha, {})
