@@ -1,0 +1,5 @@
+id_mascota,nombre,especie,raza,edad,sexo,peso,id_dueno
+M001,Luna,Canino,Labrador,4,Hembra,22.5,D001
+M002,Simba,Felino,Criollo,2,Macho,4.1,D002
+M003,Max,Canino,Poodle,6,Macho,8.3,D001
+M004,Nala,Felino,Siames,3,Hembra,3.9,D003
