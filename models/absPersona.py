@@ -9,10 +9,10 @@ class Persona(ABC):
         self.email = email.strip()
 
     def actualizar_datos(
-    self,
-    nombre: str | None = None,
-    telefono: str | None = None,
-    email: str | None = None
+        self,
+        nombre: str | None = None,
+        telefono: str | None = None,
+        email: str | None = None
     ) -> None:
         if nombre is not None:
             self.nombre = nombre.strip()
