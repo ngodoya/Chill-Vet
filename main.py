@@ -6,7 +6,8 @@ def main():
     root = tk.Tk()
     root.withdraw()  # ocultar ventana raíz
     sistema = SistemaVeterinaria()
-    VentanaMascotasDuenos(root, sistema)
+    ventana = VentanaMascotasDuenos(root, sistema)
+    ventana.protocol("WM_DELETE_WINDOW", root.destroy)
     root.mainloop()
 
 if __name__ == "__main__":
