@@ -29,7 +29,7 @@ class VentanaMascotasDuenos(tk.Toplevel):
         self._build_tab_duenos()
         self._build_tab_mascotas()
 
-    # DUeños
+    # Dueños
     def _build_tab_duenos(self):
         form = ttk.LabelFrame(self.tab_duenos, text="Registrar dueño")
         form.pack(fill="x", padx=10, pady=10)
