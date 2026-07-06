@@ -8,10 +8,10 @@ Nuestra meta es brindar una herramienta poderosa y sencilla para registrar, cons
 
 ## Características principales
 
-- **CRUD completo**: gestión de mascotas, dueños, veterinarios, citas y historiales médicos.
-- **Control de entradas, salidas y estadía** de mascotas.
-- **Gestión de turnos y personal**.
-- **Manejo de información clínica** y control de tratamientos, vacunas y consultas.
+- **Pseudo-CRUD (en memoria)**: gestión básica de mascotas, dueños y citas.
+- *(En desarrollo)* Control de entradas, salidas y estadía de mascotas.
+- *(En desarrollo)* Gestión de turnos y personal.
+- *(En desarrollo)* Manejo de información clínica (tratamientos, vacunas y consultas).
 - **Gestión y agendamiento de citas**, con control de estado.
 - **Persistencia robusta de datos** con archivos CSV y uso de `pandas` para manipulación y análisis.
 - **Extracción y análisis de datos**, generación de informes y reportes estadísticos.
