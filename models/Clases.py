@@ -1,5 +1,5 @@
 class Mascota():
-    def __init__(self, id_mascota = str, nombre= str, especie = str, raza = str, edad = int, sexo = str, peso = float, id_dueno = str):
+    def __init__(self, id_mascota : str, nombre : str, especie : str, raza : str, edad : int, sexo : str, peso : float, id_dueno : str):
         self.id_mascota = id_mascota
         self.nombre = nombre
         self.especie = especie
@@ -14,8 +14,8 @@ class Mascota():
             "peso": self.peso,
             "id_dueno": self.id_dueno,
         }
-    class Cita():
-    def __init__(self, id_cita = str, fecha_hora = str, motivo = str, estado = str, id_mascota = str, id_veterinario = str):
+class Cita():
+    def __init__(self, id_cita: str, fecha_hora: str, motivo: str, estado: str, id_mascota: str, id_veterinario: str):
         self.id_cita = id_cita
         self.fecha_hora = fecha_hora 
         self.motivo = motivo
