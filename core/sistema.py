@@ -23,7 +23,7 @@ class SistemaVeterinaria:
         return next((d for d in self.duenos if d.id_persona == id_dueno), None)
 
     def listar_duenos(self):
-        return self.duenos
+        return list(self.duenos)
 
     # Mascotas
     def crear_mascota(self, mascota: Mascota) -> bool:
