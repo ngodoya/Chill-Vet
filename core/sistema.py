@@ -38,7 +38,7 @@ class SistemaVeterinaria:
         return next((m for m in self.mascotas if m.id_mascota == id_mascota), None)
 
     def listar_mascotas(self):
-        return self.mascotas
+        return list(self.mascotas)
 
     def listar_mascotas_por_dueno(self, id_dueno: str):
         return [m for m in self.mascotas if m.id_dueno == id_dueno]
