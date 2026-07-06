@@ -14,7 +14,7 @@ class Mascota():
             "peso": self.peso,
             "id_dueno": self.id_dueno,
         }
-    class Cita:
+    class Cita():
     def __init__(self, id_cita = str, fecha_hora = str, motivo = str, estado = str, id_mascota = str, id_veterinario = str):
         self.id_cita = id_cita
         self.fecha_hora = fecha_hora 
