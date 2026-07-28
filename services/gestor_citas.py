@@ -2,14 +2,15 @@ from __future__ import annotations
 from datetime import datetime, date
 from typing import List, Optional
 
-from models.clsCita import Cita
-from services.clsCalendario import Calendario
+from models.cita import Cita
+from services.calendario import Calendario
 
 
 class GestorCitas:
     """
     Pseudo-CRUD de citas en memoria.
     """
+
     def __init__(self) -> None:
         self.citas: List[Cita] = []
         self.calendario = Calendario()
@@ -20,7 +21,9 @@ class GestorCitas:
             return False
 
         # Conflicto horario por veterinario (ignora canceladas)
-        if self.calendario.hay_conflicto(self.citas, cita.id_veterinario, cita.fecha_hora):
+        if self.calendario.hay_conflicto(
+            self.citas, cita.id_veterinario, cita.fecha_hora
+        ):
             return False
 
         self.citas.append(cita)
@@ -40,7 +43,9 @@ class GestorCitas:
 
         # validar conflicto excluyendo la cita actual
         citas_sin_actual = [c for c in self.citas if c.id_cita != id_cita]
-        if self.calendario.hay_conflicto(citas_sin_actual, cita.id_veterinario, nueva_fecha_hora):
+        if self.calendario.hay_conflicto(
+            citas_sin_actual, cita.id_veterinario, nueva_fecha_hora
+        ):
             return False
 
         cita.reprogramar(nueva_fecha_hora)

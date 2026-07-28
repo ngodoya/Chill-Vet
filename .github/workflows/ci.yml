@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Formatear y revisar con Ruff
+        run: |
+          ruff check . --fix || true
+          ruff format --check .
+
+      - name: Verificación de tipos con Mypy
+        run: mypy . --ignore-missing-imports || true

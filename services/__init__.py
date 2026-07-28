@@ -1,2 +1,4 @@
-from services.clsGestor_citas import GestorCitas
-from services.clsCalendario import Calendario
+from services.calendario import Calendario
+from services.gestor_citas import GestorCitas
+
+__all__ = ["GestorCitas", "Calendario"]

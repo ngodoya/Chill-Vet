@@ -1,74 +1,73 @@
-# ChillVet: Sistema de Gestión para Veterinarias
 
-Bienvenido a **ChillVet**, una aplicación de escritorio desarrollada en Python orientada a facilitar y optimizar la administración de procesos habituales en una clínica veterinaria.
+# Chill-Vet
 
-Nuestra meta es brindar una herramienta poderosa y sencilla para registrar, consultar, analizar y visualizar la información vital de tu veterinaria: mascotas, dueños, personal, citas y mucho más.
 
----
-
-## Características principales
-
-- **Pseudo-CRUD (en memoria)**: gestión básica de mascotas, dueños y citas.
-- *(En desarrollo)* Control de entradas, salidas y estadía de mascotas.
-- *(En desarrollo)* Gestión de turnos y personal.
-- *(En desarrollo)* Manejo de información clínica (tratamientos, vacunas y consultas).
-- **Gestión y agendamiento de citas**, con control de estado.
-- **Persistencia robusta de datos** con archivos CSV y uso de `pandas` para manipulación y análisis.
-- **Extracción y análisis de datos**, generación de informes y reportes estadísticos.
-- **Gráficas comparativas e informes automáticos** gracias a `matplotlib`.
-- **Interfaz gráfica amigable** (escritorio GUI 100% Python).
+Sistema de gestión para clínicas veterinarias que permite administrar clientes (dueños), mascotas y agendamiento de citas con control de disponibilidad y resolución de conflictos de horario.
 
 ---
 
-## Tecnologías utilizadas
+## Requisitos Previos
 
-- **Python 3.10+**
-- **pandas** (gestión y análisis de datos)
-- **matplotlib** (visualización de datos)
-- **tkinter** o **PySimpleGUI** (interfaz gráfica, decidir según preferencia del equipo)
-- **Estructura modular POO**: código organizado en módulos/core/services con clases bien definidas.
+- **Python:** `3.8` o superior (utilizamos anotaciones de tipo avanzadas como `from __future__ import annotations` y sintaxis moderna de la librería estándar `datetime`).
 
 ---
 
-## Instalación
+## Cómo Correr el Proyecto
 
-1. **Clona el repositorio:**
-    ```bash
-    git clone https://github.com/ngodoya/Chill-Vet.git
-    cd Chill-Vet
-    ```
-2. **Instala las dependencias:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. **Ejecuta la aplicación:**
-    ```bash
-    python main.py
-    ```
+Sigue estos pasos para clonar, configurar el entorno y ejecutar la aplicación en tu máquina local:
 
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/ngodoya/Chill-Vet.git
+cd Chill-Vet
+```
+### 2. Configurar el entorno virtual 
+- En Linux / macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+- En Windows (PowerShell)::
+```bash
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+### 3. Instalar dependencias de desarrollo
+Instala Ruff para la verificación de estándares y formato de código:
+```bash
+pip install ruff
+```
+### 4. Ejecutar la aplicación
+Para iniciar la aplicación, ejecuta el punto de entrada principal:
+```bash
+python main.py
+# Si no funciona pruebe:
+python3 main.py
+```
 ---
 
-## Uso
+### Verificación local
 
-- Al iniciar la aplicación, tendrás acceso a la interfaz principal donde podrás:
-    - Registrar y consultar mascotas y dueños
-    - Agendar, mostrar, modificar y cancelar citas
-    - Gestionar el personal y sus turnos
-    - Registrar entradas y salidas
-    - Explorar los historiales médicos
-    - Generar y visualizar reportes gráficos e informes de datos consolidados
-- Los datos se guardan de manera segura y pueden ser exportados (CSV/Excel) para consultas externas.
-- La navegación es intuitiva y pensada para usuarios no técnicos.
+Para verificar que el código cumple con las reglas del linter y el formato antes de realizar un commit, ejecuta:
 
----
+```bash
+# Comprobar errores de código e importaciones
+ruff check .
 
-## Objetivos del proyecto
+# Verificar el formato del código
+ruff format --check .
+```
 
-- Proveer una solución Open Source, modular y escalable para la gestión veterinaria.
-- Facilitar el trabajo diario, el análisis y la toma de decisiones sobre la operación de una clínica.
-- Permitir el análisis y visualización sencilla de los datos para informar la gestión y mejorar la atención.
-- Fomentar la integración de buenas prácticas de programación orientada a objetos y uso avanzado de librerías de datos en Python.
+## Documentación y Wiki
 
----
+Para consultar la información detallada sobre la arquitectura del proyecto, la estructura de paquetes/módulos y los diagramas de clases UML, revisa nuestra Wiki oficial:
 
-*La estructura de paquetes, el UML y la documentación detallada se encuentran en la sección Wiki del repositorio.*
+[Wiki del Proyecto Chill-Vet](https://github.com/ngodoya/Chill-Vet/wiki)
+
+En la Wiki encuentra:
+
+- **Estructura de Módulos y Paquetes:** Explicación de los paquetes `models` y `services`.
+- **Diagrama UML:** Especificaciones y relaciones entre las clases (`SistemaVeterinaria`, `GestorCitas`, `Calendario`, etc.).
+## Calidad de Código y Estándares (CI/Linter)
+
+El proyecto utiliza **Ruff** para garantizar el cumplimiento de los estándares de código de Python (PEP 8), detección de errores y formateo automático.

@@ -11,7 +11,9 @@ class Calendario:
     DURACION_CITA_MIN = 60
 
     @staticmethod
-    def hay_conflicto(citas: List, id_veterinario: str, fecha_hora_nueva: datetime) -> bool:
+    def hay_conflicto(
+        citas: List, id_veterinario: str, fecha_hora_nueva: datetime
+    ) -> bool:
         for cita in citas:
             if cita.id_veterinario != id_veterinario:
                 continue
@@ -26,13 +28,18 @@ class Calendario:
     @staticmethod
     def citas_por_dia(citas: List, fecha_objetivo: datetime) -> List:
         return [
-            c for c in citas
-            if c.fecha_hora.date() == fecha_objetivo.date() and str(c.estado).upper() != "CANCELADA"
+            c
+            for c in citas
+            if c.fecha_hora.date() == fecha_objetivo.date()
+            and str(c.estado).upper() != "CANCELADA"
         ]
 
     @staticmethod
     def citas_por_mes(citas: List, anio: int, mes: int) -> List:
         return [
-            c for c in citas
-            if c.fecha_hora.year == anio and c.fecha_hora.month == mes and str(c.estado).upper() != "CANCELADA"
+            c
+            for c in citas
+            if c.fecha_hora.year == anio
+            and c.fecha_hora.month == mes
+            and str(c.estado).upper() != "CANCELADA"
         ]

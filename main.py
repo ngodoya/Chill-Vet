@@ -2,6 +2,7 @@ import tkinter as tk
 from core.sistema import SistemaVeterinaria
 from gui.ventana_mascotas_duenos import VentanaMascotasDuenos
 
+
 def main():
     root = tk.Tk()
     root.withdraw()  # ocultar ventana raíz
@@ -9,6 +10,7 @@ def main():
     ventana = VentanaMascotasDuenos(root, sistema)
     ventana.protocol("WM_DELETE_WINDOW", root.destroy)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
