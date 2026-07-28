@@ -1,3 +1,4 @@
+[![CI / Ruff Check](https://github.com/ngodoya/Chill-Vet/actions/workflows/ci.yml/badge.svg)](https://github.com/ngodoya/Chill-Vet/actions/workflows/ci.yml)
 # Chill-Vet
 
 Sistema de gestión para clínicas veterinarias que permite administrar clientes (dueños), mascotas y agendamiento de citas con control de disponibilidad y resolución de conflictos de horario.
