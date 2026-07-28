@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from datetime import datetime
 
-# ---------- Paleta ----------
+
 CANVAS         = "#eef2f7"
 WINDOW         = "#ffffff"
 BORDER         = "#d9dee6"
