@@ -1,4 +1,4 @@
-from models.absPersona import Persona
+from models.persona import Persona
 
 
 class Dueno(Persona):

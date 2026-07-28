@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 from core.sistema import SistemaVeterinaria
-from models.clsDueno import Dueno
-from models.clsMascota import Mascota
+from models.dueno import Dueno
+from models.mascota import Mascota
 
 
 class VentanaMascotasDuenos(tk.Toplevel):

@@ -2,8 +2,8 @@ from __future__ import annotations
 from datetime import datetime, date
 from typing import List, Optional
 
-from models.clsCita import Cita
-from services.clsCalendario import Calendario
+from models.cita import Cita
+from services.calendario import Calendario
 
 
 class GestorCitas:

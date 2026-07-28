@@ -1,7 +1,7 @@
-from models.clsDueno import Dueno
-from models.clsMascota import Mascota
-from models.clsCita import Cita
-from services.clsGestor_citas import GestorCitas
+from models.dueno import Dueno
+from models.mascota import Mascota
+from models.cita import Cita
+from services.gestor_citas import GestorCitas
 
 
 class SistemaVeterinaria:

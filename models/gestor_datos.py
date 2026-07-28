@@ -1,7 +1,7 @@
 import os
 import pandas as pd  # type: ignore
-from models.clsMascota import Mascota
-from models.clsCita import Cita
+from models.mascota import Mascota
+from models.cita import Cita
 
 RUTA_MASCOTAS = os.path.join("data", "mascotas.csv")
 RUTA_CITAS = os.path.join("data", "citas.csv")
