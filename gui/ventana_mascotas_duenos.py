@@ -48,8 +48,12 @@ class VentanaMascotasDuenos(tk.Toplevel):
             ("Dirección", self.dueno_dir),
         ]
         for i, (label, var) in enumerate(fields):
-            ttk.Label(form, text=label).grid(row=0, column=i * 2, padx=4, pady=6, sticky="w")
-            ttk.Entry(form, textvariable=var, width=18).grid(row=0, column=i * 2 + 1, padx=4, pady=6)
+            ttk.Label(form, text=label).grid(
+                row=0, column=i * 2, padx=4, pady=6, sticky="w"
+            )
+            ttk.Entry(form, textvariable=var, width=18).grid(
+                row=0, column=i * 2 + 1, padx=4, pady=6
+            )
 
         ttk.Button(form, text="Guardar dueño", command=self._guardar_dueno).grid(
             row=1, column=0, columnspan=10, pady=6
@@ -77,7 +81,9 @@ class VentanaMascotasDuenos(tk.Toplevel):
 
     def _guardar_dueno(self):
         if not self.dueno_id.get().strip() or not self.dueno_nombre.get().strip():
-            messagebox.showwarning("Validación", "ID y Nombre del dueño son obligatorios.")
+            messagebox.showwarning(
+                "Validación", "ID y Nombre del dueño son obligatorios."
+            )
             return
 
         dueno = Dueno(
@@ -122,8 +128,12 @@ class VentanaMascotasDuenos(tk.Toplevel):
             ("Raza", self.m_raza),
         ]
         for i, (label, var) in enumerate(fields_row1):
-            ttk.Label(form, text=label).grid(row=0, column=i * 2, padx=4, pady=6, sticky="w")
-            ttk.Entry(form, textvariable=var, width=16).grid(row=0, column=i * 2 + 1, padx=4, pady=6)
+            ttk.Label(form, text=label).grid(
+                row=0, column=i * 2, padx=4, pady=6, sticky="w"
+            )
+            ttk.Entry(form, textvariable=var, width=16).grid(
+                row=0, column=i * 2 + 1, padx=4, pady=6
+            )
 
         fields_row2 = [
             ("Edad", self.m_edad),
@@ -132,8 +142,12 @@ class VentanaMascotasDuenos(tk.Toplevel):
             ("ID Dueño", self.m_id_dueno),
         ]
         for i, (label, var) in enumerate(fields_row2):
-            ttk.Label(form, text=label).grid(row=1, column=i * 2, padx=4, pady=6, sticky="w")
-            ttk.Entry(form, textvariable=var, width=16).grid(row=1, column=i * 2 + 1, padx=4, pady=6)
+            ttk.Label(form, text=label).grid(
+                row=1, column=i * 2, padx=4, pady=6, sticky="w"
+            )
+            ttk.Entry(form, textvariable=var, width=16).grid(
+                row=1, column=i * 2 + 1, padx=4, pady=6
+            )
 
         ttk.Button(form, text="Guardar mascota", command=self._guardar_mascota).grid(
             row=2, column=0, columnspan=8, pady=8
@@ -144,7 +158,16 @@ class VentanaMascotasDuenos(tk.Toplevel):
 
         self.tree_mascotas = ttk.Treeview(
             list_frame,
-            columns=("id", "nombre", "especie", "raza", "edad", "sexo", "peso", "id_dueno"),
+            columns=(
+                "id",
+                "nombre",
+                "especie",
+                "raza",
+                "edad",
+                "sexo",
+                "peso",
+                "id_dueno",
+            ),
             show="headings",
             height=12,
         )
@@ -168,11 +191,15 @@ class VentanaMascotasDuenos(tk.Toplevel):
             edad = int(self.m_edad.get())
             peso = float(self.m_peso.get())
         except ValueError:
-            messagebox.showwarning("Validación", "Edad debe ser entero y peso numérico.")
+            messagebox.showwarning(
+                "Validación", "Edad debe ser entero y peso numérico."
+            )
             return
 
         if not self.m_id.get().strip() or not self.m_nombre.get().strip():
-            messagebox.showwarning("Validación", "ID y Nombre de la mascota son obligatorios.")
+            messagebox.showwarning(
+                "Validación", "ID y Nombre de la mascota son obligatorios."
+            )
             return
 
         mascota = Mascota(
@@ -190,7 +217,7 @@ class VentanaMascotasDuenos(tk.Toplevel):
         if not ok:
             messagebox.showerror(
                 "Error",
-                "No se pudo crear mascota (ID duplicado o ID de dueño inexistente)."
+                "No se pudo crear mascota (ID duplicado o ID de dueño inexistente).",
             )
             return
 
@@ -215,7 +242,11 @@ class VentanaMascotasDuenos(tk.Toplevel):
             self.tree_duenos.delete(item)
 
         for d in self.sistema.listar_duenos():
-            self.tree_duenos.insert("", "end", values=(d.id_persona, d.nombre, d.telefono, d.email, d.direccion))
+            self.tree_duenos.insert(
+                "",
+                "end",
+                values=(d.id_persona, d.nombre, d.telefono, d.email, d.direccion),
+            )
 
     def _refrescar_mascotas(self):
         for item in self.tree_mascotas.get_children():
@@ -223,6 +254,16 @@ class VentanaMascotasDuenos(tk.Toplevel):
 
         for m in self.sistema.listar_mascotas():
             self.tree_mascotas.insert(
-                "", "end",
-                values=(m.id_mascota, m.nombre, m.especie, m.raza, m.edad, m.sexo, m.peso, m.id_dueno)
+                "",
+                "end",
+                values=(
+                    m.id_mascota,
+                    m.nombre,
+                    m.especie,
+                    m.raza,
+                    m.edad,
+                    m.sexo,
+                    m.peso,
+                    m.id_dueno,
+                ),
             )

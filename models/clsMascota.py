@@ -8,7 +8,7 @@ class Mascota:
         edad: int,
         sexo: str,
         peso: float,
-        id_dueno: str
+        id_dueno: str,
     ):
         self.id_mascota = id_mascota.strip()
         self.nombre = nombre.strip()
@@ -27,7 +27,7 @@ class Mascota:
         edad: int | None = None,
         sexo: str | None = None,
         peso: float | None = None,
-        id_dueno: str | None = None
+        id_dueno: str | None = None,
     ) -> None:
         if nombre is not None:
             self.nombre = nombre.strip()

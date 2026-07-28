@@ -1,7 +1,16 @@
 from datetime import datetime
 
+
 class Cita:
-    def __init__(self, id_cita: str, fecha_hora: datetime | str, motivo: str, estado: str, id_mascota: str, id_veterinario: str):
+    def __init__(
+        self,
+        id_cita: str,
+        fecha_hora: datetime | str,
+        motivo: str,
+        estado: str,
+        id_mascota: str,
+        id_veterinario: str,
+    ):
         self.id_cita = id_cita.strip()
         # Normalice fecha_hora a objeto datetime internamente
         if isinstance(fecha_hora, str):
@@ -22,7 +31,9 @@ class Cita:
 
     def reprogramar(self, nueva_fecha_hora: datetime | str) -> None:
         if isinstance(nueva_fecha_hora, str):
-            self.fecha_hora = datetime.strptime(nueva_fecha_hora.strip(), "%Y-%m-%d %H:%M:%S")
+            self.fecha_hora = datetime.strptime(
+                nueva_fecha_hora.strip(), "%Y-%m-%d %H:%M:%S"
+            )
         else:
             self.fecha_hora = nueva_fecha_hora
 

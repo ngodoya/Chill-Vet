@@ -33,8 +33,21 @@ Para consultar la información detallada sobre la arquitectura del proyecto, la 
 
 [Wiki del Proyecto Chill-Vet](https://github.com/ngodoya/Chill-Vet/wiki)
 
-En la Wiki encontrarás:
+En la Wiki encuentra:
 
-- **Estructura de Módulos:** Explicación de los paquetes `models` y `services`.
+- **Estructura de Módulos y Paquetes:** Explicación de los paquetes `models` y `services`.
 - **Diagrama UML:** Especificaciones y relaciones entre las clases (`SistemaVeterinaria`, `GestorCitas`, `Calendario`, etc.).
-- **Reglas de Negocio:** Detalle sobre la validación de solapamiento de citas y estados del sistema.
+## Calidad de Código y Estándares (CI/Linter)
+
+El proyecto utiliza **Ruff** para garantizar el cumplimiento de los estándares de código de Python (PEP 8), detección de errores y formateo automático.
+
+### Verificación local
+
+Para verificar que el código cumple con las reglas del linter y el formato antes de realizar un commit, ejecuta:
+
+```bash
+# Comprobar errores de código e importaciones
+ruff check .
+
+# Verificar el formato del código
+ruff format --check .

@@ -12,7 +12,7 @@ class Persona(ABC):
         self,
         nombre: str | None = None,
         telefono: str | None = None,
-        email: str | None = None
+        email: str | None = None,
     ) -> None:
         if nombre is not None:
             self.nombre = nombre.strip()

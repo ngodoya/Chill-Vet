@@ -3,13 +3,15 @@ from models.clsMascota import Mascota
 from models.clsCita import Cita
 from services.clsGestor_citas import GestorCitas
 
+
 class SistemaVeterinaria:
     """
     Orquestador central del sistema (pseudo-CRUD).
     """
+
     def __init__(self):
-        self.duenos = []    
-        self.mascotas = []    
+        self.duenos = []
+        self.mascotas = []
         self.gestor_citas = GestorCitas()
 
     # Dueños
