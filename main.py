@@ -1,4 +1,3 @@
-import tkinter as tk  # type: ignore
 from gui.ventana_principal import AppVeterinaria
 
 
