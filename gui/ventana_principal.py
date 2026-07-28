@@ -37,7 +37,7 @@ FONT_H1  = ("Segoe UI", 16, "bold")
 FONT_SM  = ("Segoe UI", 9)
 
 
-# ---------- Botón plano con hover ----------
+
 class FlatButton(tk.Label):
     def __init__(self, parent, text, bg, fg, hover_bg, command, padx=12, pady=6):
         super().__init__(parent, text=text, bg=bg, fg=fg, font=FONT,
