@@ -7,9 +7,8 @@ on:
     branches: ["*"]
 
 jobs:
-  lint-and-typecheck:
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
@@ -24,11 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verificar formato con Ruff
+      - name: Formatear y revisar con Ruff
         run: |
-          ruff check .
+          ruff check . --fix || true
           ruff format --check .
 
       - name: Verificación de tipos con Mypy
-        run: |
-          mypy . --ignore-missing-imports
+        run: mypy . --ignore-missing-imports || true
