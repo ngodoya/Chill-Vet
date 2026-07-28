@@ -1,6 +1,7 @@
 import os
-import pandas as pd
-from Clases import Mascota, Cita
+import pandas as pd # type: ignore
+from models.clsMascota import Mascota
+from models.clsCita import Cita
 
 RUTA_MASCOTAS = os.path.join("data", "mascotas.csv")
 RUTA_CITAS = os.path.join("data", "citas.csv")
@@ -55,7 +56,16 @@ def guardar_citas(lista_citas):
     df.to_csv(RUTA_CITAS, index=False)
 def agregar_cita(cita: Cita):
     df = _leer_citas_df()
-    nueva_fila = pd.DataFrame([cita.to_dict(FORMATO_FECHA_HORA)])
+    nueva_fila = pd.DataFrame([
+        {
+            "id_cita": cita.id_cita,
+            "fecha_hora": cita.fecha_hora.strftime(FORMATO_FECHA_HORA),
+            "motivo": cita.motivo,
+            "estado": cita.estado,
+            "id_mascota": cita.id_mascota,
+            "id_veterinario": cita.id_veterinario,
+        }
+    ])
     nueva_fila["fecha_hora"] = pd.to_datetime(nueva_fila["fecha_hora"], format=FORMATO_FECHA_HORA)
     df = pd.concat([df, nueva_fila], ignore_index=True)
     guardar_citas(_df_a_citas(df)) 

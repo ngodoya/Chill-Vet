@@ -1,1 +1,6 @@
-pandas>=2.0,<3.0
+# Dependencias del proyecto
+pandas>=2.0.0,<3.0.0
+
+# Herramientas de calidad de código y CI
+ruff>=0.1.0
+mypy>=1.5.0

@@ -3,10 +3,10 @@ from __future__ import annotations
 from dataclasses import asdict, is_dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, cast
 
 try:
-    import pandas as pd
+    import pandas as pd  # type: ignore
 except Exception as e:
     raise RuntimeError("Pandas es necesario para GestorDatos. Instala con 'pip install pandas'.") from e
 
@@ -135,7 +135,7 @@ class GestorDatos:
         if isinstance(obj, dict):
             return dict(obj)
         if is_dataclass(obj):
-            return asdict(obj)
+            return asdict(cast(Any, obj))
         return {
             k: v for k, v in vars(obj).items()
             if not k.startswith("_")
