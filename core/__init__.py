@@ -1,1 +1,1 @@
-from core.sistema import SistemaVeterinaria
+# vacío por ahora para evitar ciclos de importación

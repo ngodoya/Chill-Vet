@@ -1,0 +1,5 @@
+id_cita,fecha_hora,motivo,estado,id_mascota,id_veterinario
+C001,2026-07-10 09:00,Vacunacion,PROGRAMADA,M001,V001
+C002,2026-07-10 10:00,Control general,CONFIRMADA,M002,V001
+C003,2026-07-11 11:00,Desparasitacion,PROGRAMADA,M003,V002
+C004,2026-07-12 15:00,Revision postoperatoria,CANCELADA,M004,V001
