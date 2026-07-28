@@ -1,16 +1,9 @@
-import tkinter as tk
-from core.sistema import SistemaVeterinaria
-from gui.ventana_mascotas_duenos import VentanaMascotasDuenos
-
+import tkinter as tk # type: ignore
+from gui.ventana_principal import AppVeterinaria
 
 def main():
-    root = tk.Tk()
-    root.withdraw()  # ocultar ventana raíz
-    sistema = SistemaVeterinaria()
-    ventana = VentanaMascotasDuenos(root, sistema)
-    ventana.protocol("WM_DELETE_WINDOW", root.destroy)
-    root.mainloop()
+    app = AppVeterinaria()
+    app.mainloop()
 
-
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()
