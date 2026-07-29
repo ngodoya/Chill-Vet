@@ -3,10 +3,10 @@ from abc import ABC
 
 class Persona(ABC):
     def __init__(self, id_persona: str, nombre: str, telefono: str, email: str):
-        self.id_persona = id_persona.strip()
-        self.nombre = nombre.strip()
-        self.telefono = telefono.strip()
-        self.email = email.strip()
+        self.id_persona = str(id_persona.strip())
+        self.nombre = str(nombre.strip())
+        self.telefono = str(telefono.strip())
+        self.email = str(email.strip())
 
     def actualizar_datos(
         self,
